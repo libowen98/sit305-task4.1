@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Task4_1</string>
+    <string name="display">You spend 00:00 on push ups last time.</string>
+    <string name="imageButton1">button1</string>
+    <string name="imageButton2">button2</string>
+    <string name="imageButton3">button3</string>
+    <string name="text">Enter your workout type:</string>
+    <string name="type" />
+    <string name="timer">00:00</string>
+</resources>
