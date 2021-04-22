@@ -7,4 +7,5 @@
     <string name="text">Enter your workout type:</string>
     <string name="type" />
     <string name="timer">00:00</string>
+
 </resources>
