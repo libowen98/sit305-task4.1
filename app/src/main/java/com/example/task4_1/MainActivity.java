@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
         workType = SharedPreferences.getString("type", "");
         time = SharedPreferences.getLong("time", 0);
-        //long hours = (time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
         long minutes = (time % (1000 * 60 * 60)) / (1000 * 60);
         long seconds = (time % (1000 * 60)) / 1000;
         spendTime = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
@@ -102,19 +101,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void stopChronometer(View view) {
-        /*workOut = input.getText().toString();
-        updatedisplay(chronometer.getText());
-        chronometer.setBase(SystemClock.elapsedRealtime());
-        pauseOffset = 0;
-        running = false;
-        // reset chronometer
-        pauseOffset = 0;
-        chronometer.stop();
-        chronometer.setBase(SystemClock.elapsedRealtime());*/
 
         if (!running) {
             chronometer.stop();
-            // Make totalTime equal to pauseOffset in pauseClick (Or we can say the value after clicking the Pause button)
             long totalTime = pauseOffset;
             Editor.putLong("time", totalTime);
             Editor.putString("type", input.getText().toString());
@@ -125,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             chronometer.setBase(SystemClock.elapsedRealtime());
 
         } else {
-            Toast.makeText(MainActivity.this, "You need to click the pause at first!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Click the pause first please!", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -137,16 +126,7 @@ public class MainActivity extends AppCompatActivity {
         else display.setText("You spent " + time + " on " + workOut + " last time.");
     }
 
-    
-    /*public void saveData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreference", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.commit();
-    }
-    
-    public void loadData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreference", MODE_PRIVATE);
-    }*/
+
 
 
 
